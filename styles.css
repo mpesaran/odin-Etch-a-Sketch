@@ -1,16 +1,37 @@
-.row {
-    border: solid 2px red;
-    width: 30px;
-    height: 30px;
+body {
+    margin: 0 auto;
+    background-color: rgb(19, 18, 18);
+}
+
+.cell {
+    width: var(--square-size, 60px);
+    height: var(--square-size, 60px);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 2px;
+    margin: 0px;
+    /* box-sizing: border-box; */
 }
 
 #container {
+    width: 960px;
+    height: 960px;
+    background-color: beige;
+}
+
+main {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
-    width: 800px;
+}
+
+.cell:hover {
+    background-color: pink;
+}
+
+button {
+    margin: 40px 0;
+    cursor: pointer;
 }

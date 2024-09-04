@@ -1,12 +1,29 @@
 const container = document.getElementById('container');
 
 function makeRows(rowCount) {
+    container.innerHTML = "";
+
+    const cellSize = parseFloat((960 / rowCount).toFixed(2));
+    container.style.setProperty('--square-size', `${cellSize}px`);
+
     for (let r = 0; r < rowCount * rowCount; r++) {
-        let row = document.createElement('div');
-        row.textContent = r + 1; // Optional: to see numbers in the grid
-        row.classList.add("row");
-        container.appendChild(row);
+        let cell = document.createElement('div');
+        cell.classList.add("cell");
+        container.appendChild(cell);
     }
 }
 
-makeRows(16);
+function handleButtonClick() {
+    let newSize = parseInt(prompt("Enter the number of squares per side (max 100): ", 10));
+
+    if (isNaN(newSize) || newSize < 1 || newSize > 100) {
+        alert("Please enter a valid number between 1 and 100")
+        return;
+    }
+
+    makeRows(newSize)
+}
+
+document.getElementById('generateGrid').addEventListener('click', handleButtonClick);
+
+makeRows(16)
