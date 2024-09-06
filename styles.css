@@ -3,20 +3,14 @@ body {
     background-color: rgb(19, 18, 18);
 }
 
-.cell {
-    width: var(--square-size, 60px);
-    height: var(--square-size, 60px);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
-    /* box-sizing: border-box; */
-}
-
 #container {
     width: 960px;
     height: 960px;
-    background-color: beige;
+    background-color: rgb(245, 245, 219);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
 }
 
 main {
@@ -27,9 +21,9 @@ main {
     flex-wrap: wrap;
 }
 
-.cell:hover {
-    background-color: pink;
-}
+/* #cell:hover {
+    background-color: var(--random-color);
+} */
 
 button {
     margin: 40px 0;
